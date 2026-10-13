@@ -488,6 +488,7 @@ a, button { -webkit-tap-highlight-color: rgba(221,187,120,.25); }
 .gallery > .tile { width: calc((100% - 2 * clamp(16px, 2.4vw, 32px)) / 3); }
 @media (max-width: 960px) { .gallery > .tile { width: calc((100% - clamp(16px, 2.4vw, 32px)) / 2); } }
 @media (max-width: 640px) { .gallery > .tile { width: calc((100% - 12px) / 2); } }
+html, body { overflow-anchor: none; }
 </style>
 </head>
 <body>
@@ -928,7 +929,13 @@ a, button { -webkit-tap-highlight-color: rgba(221,187,120,.25); }
   menuBtn.addEventListener("click", function () { var open = nav.classList.toggle("open"); menuBtn.setAttribute("aria-expanded", open ? "true" : "false"); });
 
   var header = document.getElementById("site-header");
-  function onScroll() { header.classList.toggle("scrolled", window.scrollY > 40); }
+  // Shrink the header past 140px and only restore it near the very top.
+  // The gap is larger than the height the header loses, so it can't flip back and forth.
+  function onScroll() {
+    var y = window.scrollY, on = header.classList.contains("scrolled");
+    if (!on && y > 140) header.classList.add("scrolled");
+    else if (on && y < 10) header.classList.remove("scrolled");
+  }
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
