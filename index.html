@@ -494,6 +494,14 @@ html, body { overflow-anchor: none; }
 .contact-photo { position: relative; max-width: 720px; margin: 56px auto 0; box-shadow: 0 34px 60px -38px rgba(46,31,23,.55); }
 .contact-photo .photo { aspect-ratio: 5 / 4; }
 .contact-photo::after { content: ""; position: absolute; inset: 14px; border: 1px solid rgba(246,239,224,.6); pointer-events: none; }
+.legal { max-width: 46em; margin: 40px auto 0; padding-top: 24px; border-top: 1px solid var(--rule); }
+.legal p { margin: 0; line-height: 1.7; }
+.legal .broker { font-size: 0.95rem; color: var(--fg); }
+.legal .broker a { text-decoration: none; }
+.legal .trec-links { margin-top: 12px; display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 28px; }
+.legal .trec-links a { font-size: 0.9rem; color: var(--gold-light); text-underline-offset: 4px; display: inline-block; padding: 6px 0; }
+.legal .eho { margin-top: 10px; font-size: 0.8rem; color: #A99F8A; }
+.footer .legal + small { margin-top: 16px; padding-top: 0; border-top: 0; }
 </style>
 </head>
 <body>
@@ -892,7 +900,11 @@ html, body { overflow-anchor: none; }
       <a href="tel:+12145330093">Ginger Stockton: (214) 533-0093</a>
     </div>
     <button type="button" class="totop" id="totop">Back to top <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 10l5-5 5 5"/></svg></button>
-    <small>Equal Housing Opportunity. Broker license numbers and required Texas Real Estate Commission notices to be added here.</small>
+    <div class="legal">
+      <p class="broker">Broker: Shea Edmonds &middot; TREC License #0553240 &middot; <a href="tel:+19034678070">(903) 467-8070</a></p>
+      <p class="trec-links"><a href="https://www.trec.texas.gov/forms/information-about-brokerage-services" target="_blank" rel="noopener">Texas Real Estate Commission Information About Brokerage Services</a><a href="https://www.trec.texas.gov/forms/consumer-protection-notice" target="_blank" rel="noopener">Texas Real Estate Commission Consumer Protection Notice</a></p>
+      <p class="eho">Equal Housing Opportunity</p>
+    </div>
     <small>&copy; <span id="yr">2026</span> Divine Design Real Estate. All rights reserved.</small>
   </div>
 </footer>
