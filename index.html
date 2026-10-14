@@ -509,7 +509,10 @@ html, body { overflow-anchor: none; }
 .testimonial .who { margin-top: 30px; display: flex; flex-direction: column; align-items: center; gap: 6px; }
 .testimonial .who .name { font-family: var(--script); font-size: 2.8rem; line-height: 1; color: var(--gold-light); }
 .testimonial .who .label { color: var(--soft); }
-.quotes.testimonial { max-width: 68rem; }
+.quotes.testimonial { max-width: 74rem; }
+.testimonial .t-body { max-width: none; }
+.testimonial .t-body p { text-wrap: balance; }
+.wide-wrap { max-width: 1240px; }
 </style>
 </head>
 <body>
@@ -591,7 +594,7 @@ html, body { overflow-anchor: none; }
   </section>
 
   <section class="section on-navy themed">
-    <div class="wrap">
+    <div class="wrap wide-wrap">
       <div class="quotes testimonial">
         <p class="kicker">Kind Words</p>
         <span class="qmark" aria-hidden="true">&ldquo;</span>
